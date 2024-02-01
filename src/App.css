@@ -1,0 +1,16 @@
+body{
+  font-family: "Exo 2", sans-serif;
+}
+
+.borderdesign::after{
+  content: "";
+  width: 0;
+  height: 2px;
+  background-color: cyan;
+  display: block;
+  margin: auto;
+  transition: 0.5s;
+}
+.borderdesign:hover::after{
+  width: 100%;
+}
