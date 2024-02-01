@@ -7,7 +7,7 @@ export const TodoProvider = ({ children }) => {
   // ======= Register User
   const addUser = async(params) => {
   try {
-    const response = await axios.post("http://localhost:4000/users/register" , params);
+    const response = await axios.post("https://todobackend-4nt5.onrender.com/users/register" , params);
     return response.data;
   } catch (error) {
     return error
@@ -17,7 +17,7 @@ export const TodoProvider = ({ children }) => {
   // ======= Login User
   const loginUser = async(params) => {
     try {
-      const response = await axios.post("http://localhost:4000/users/login" , params);
+      const response = await axios.post("https://todobackend-4nt5.onrender.com/users/login" , params);
       return response.data;
     } catch (error) {
       return error
@@ -27,7 +27,7 @@ export const TodoProvider = ({ children }) => {
     // Add Todo
     const addTodo = async(params) => {
       try {
-        const response = await axios.post(`http://localhost:4000/todos/addTodo/${params.id}` , params.AddTodo);
+        const response = await axios.post(`https://todobackend-4nt5.onrender.com/todos/addTodo/${params.id}` , params.AddTodo);
         return response.data;
       } catch (error) {
         return error
@@ -38,7 +38,7 @@ export const TodoProvider = ({ children }) => {
        const updateTodo = async (params) => {
         try {
           const response = await axios.put(
-            `http://localhost:4000/todos/updateTodos/${params.updateId}`,
+            `https://todobackend-4nt5.onrender.com/todos/updateTodos/${params.updateId}`,
             params.update,
             { headers: { 'Content-Type': 'application/json' } }
           );
@@ -52,7 +52,7 @@ export const TodoProvider = ({ children }) => {
     const getAllTodos = async(id) => {
 
       try {
-          const response = await axios.get(`http://localhost:4000/todos/todos/${id}`);
+          const response = await axios.get(`https://todobackend-4nt5.onrender.com/todos/todos/${id}`);
           return response.data;
       } catch (error) {
           return error
@@ -63,7 +63,7 @@ export const TodoProvider = ({ children }) => {
   const deleteTodo = async(id) => {
 
     try {
-        const response = await axios.delete(`http://localhost:4000/todos/deleteTodos/${id}`);
+        const response = await axios.delete(`https://todobackend-4nt5.onrender.com/todos/deleteTodos/${id}`);
         return response.data;
     } catch (error) {
         return error
